@@ -18,7 +18,7 @@ public class VC_Open {
     /**
      * 双线性对
      */
-    final static public Pairing pairing = PairingFactory.getPairing("params/curves/a.properties");
+    final public static Pairing pairing = PairingFactory.getPairing("params/curves/a.properties");
     static File outputDir;
     static ArrayList<Element> Hx;
     static ArrayList<Element> v;
@@ -27,7 +27,7 @@ public class VC_Open {
     static ArrayList<Element> C_up;
     static int T;
 
-    static {
+    public VC_Open(){
         String rootDir = System.getProperty("user.dir").replace("\\", "/");
         outputDir = new File(rootDir, "output");
 
@@ -62,8 +62,8 @@ public class VC_Open {
         T = SerializationDemonstrator.deserialize(outputFile.getAbsolutePath());
     }
 
-    public static Proof Open(int x, int q) {
-        Hx = MysqlUtils.getHi(q, x);
+    public Proof Open(int x, int q) {
+        Hx = MysqlUtils.getHi( x,q);
 
         Element pi_x = pairing.getG1().newOneElement();
 

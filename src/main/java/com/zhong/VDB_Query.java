@@ -10,20 +10,34 @@ import it.unisa.dia.gas.jpbc.Element;
 public class VDB_Query {
     public static void main(String[] args) {
         Proof res;
+        VDB_Query vdb_query = new VDB_Query();
         if (args.length == 2) {
             int x = new Integer(args[0]);
             int q = new Integer(args[1]);
-            res = Query(x, q);
+            res = vdb_query.Query(x, q);
         } else {
-            res = Query(0, 5);
+            res = vdb_query.Query(0, 6549);
         }
         System.out.println(res.getPi_x());
         System.out.println(res.getT());
         System.out.println(res.getV_x());
     }
 
-    public static Proof Query(int x, int q) {
-        return VC_Open.Open(x, q);
+    public Proof Query(int x, int q) {
+        VC_Open vc_open = new VC_Open();
+        return vc_open.Open(x, q);
+    }
+
+    /**
+     * 测试query的时间
+     *
+     * @param x 查询第x个位置的元素
+     * @param q 有多少个位置
+     * @param vc_open 一个初始化好了的VC_Open对象，这是为了只读取io一次
+     * @return 证据
+     */
+    public Proof Query_Time(int x,int q,VC_Open vc_open){
+        return vc_open.Open(x,q);
     }
 }
 

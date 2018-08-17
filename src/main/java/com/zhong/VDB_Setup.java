@@ -8,9 +8,15 @@ public class VDB_Setup {
         if (args.length == 2) {
             int q = new Integer(args[0]);
             int numHijRow = new Integer(args[1]);
+            long begin = System.currentTimeMillis();
             Setup(q, numHijRow);
+            long end = System.currentTimeMillis();
+            System.out.println("q= "+q+" 时候setup花费的时间为： " +(end - begin)+" ms");
         } else {
-            Setup(5, 2);
+            long begin = System.currentTimeMillis();
+            Setup(6549, 2);
+            long end = System.currentTimeMillis();
+            System.out.println("q= "+6549+" 时候setup花费的时间为： " +(end - begin)+" ms");
         }
     }
 

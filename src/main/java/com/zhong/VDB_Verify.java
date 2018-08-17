@@ -17,13 +17,13 @@ public class VDB_Verify {
     /**
      * 双线性对
      */
-    final static public Pairing pairing = PairingFactory.getPairing("params/curves/a.properties");
+    final  public static Pairing pairing = PairingFactory.getPairing("params/curves/a.properties");
     static Element g;
     static Element Y;
     static ArrayList<Element> h;
     static ArrayList<Element> C_down;
 
-    static {
+    public VDB_Verify(){
         // 获得项目的文件夹resources下面的a.txt
         String rootDir = System.getProperty("user.dir").replace("\\", "/");
         File outputDir = new File(rootDir, "output");
@@ -52,18 +52,20 @@ public class VDB_Verify {
     }
 
     public static void main(String[] args) {
+        VDB_Query vdb_query = new VDB_Query();
+        VDB_Verify vdb_verify = new VDB_Verify();
         if (args.length == 2) {
             int x = new Integer(args[0]);
             int q = new Integer(args[1]);
-            Proof res = VDB_Query.Query(x, q);
-            System.out.println(Verify(0, res));
+            Proof res = vdb_query.Query(x, q);
+            System.out.println(vdb_verify.Verify(0, res));
         } else {
-            Proof res = VDB_Query.Query(0, 5);
-            System.out.println(Verify(0, res));
+            Proof res = vdb_query.Query(0, 5);
+            System.out.println(vdb_verify.Verify(0, res));
         }
     }
 
-    public static boolean Verify(int x, Proof delta) {
+    public boolean Verify(int x, Proof delta) {
         Element H_T = delta.getH_T();
         Element v_x = delta.getV_x();
         Element pi_x = delta.getPi_x();

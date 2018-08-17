@@ -22,8 +22,26 @@
     </properties>
 
 
+
+
     <build>
+
+
+
         <plugins>
+
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>output</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
             <!-- 将本地的jar包安装到仓库中，注意parse标签是clean -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -127,4 +145,5 @@
             <version>6.0.6</version>
         </dependency>
     </dependencies>
+
 </project>

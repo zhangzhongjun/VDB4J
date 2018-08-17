@@ -60,7 +60,7 @@ public class MysqlUtils {
      *
      * @return 得到第i行的H
      */
-    public static ArrayList<Element> getHi(int q, int i) {
+    public static ArrayList<Element> getHi( int i,int q) {
         ArrayList<Element> Hi = null;
 
         String sql = "select i,j,H_ij from SetupOutput_H_" + (q) + " WHERE i=(?) order by j";

@@ -13,6 +13,14 @@ CREATE TABLE IF NOT EXISTS SetupOutput_H_5(
 );
 
 
+CREATE TABLE IF NOT EXISTS SetupOutput_H_500(
+  i int not null,
+  j int not null,
+  H_ij blob,
+  primary key(i,j)
+);
+
+
 CREATE TABLE IF NOT EXISTS SetupOutput_H_6549(
   i int not null,
   j int not null,

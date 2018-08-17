@@ -12,12 +12,20 @@ public class VDB_UpdateTest {
         String fileName = "+1xp7x9okHmjEIKT+n9zsg==.txt";
         Element v_x_new = VDB_Utils.getElementInZrFromString(fileName);
 
+        VDB_Update vdb_update = new VDB_Update();
+
+        // 更新的位置就是T
+        vdb_update.Update(0, v_x_new);
+        //序列化
+        vdb_update.serializeOutput();
+
+
         long begin = System.currentTimeMillis();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 10; i++) {
             // 更新的位置就是T
-            VDB_Update.Update_time(0, v_x_new);
+            vdb_update.Update_time(0, v_x_new);
         }
         long end = System.currentTimeMillis();
-        System.out.println("所用时间为：" + (end - begin) + " ms");
+        System.out.println("10次update所用时间为：" + (end - begin) + " ms");
     }
 }
