@@ -11,15 +11,12 @@ public class SerializationDemonstrator {
     /**
      * Serialize the provided object to the file of the provided name.
      *
-     * @param objectToSerialize
-     *         Object that is to be serialized to file; it is best that this
-     *         object have an individually overridden toString()
-     *         implementation as that is used by this method for writing our
-     *         status.
-     * @param fileName
-     *         *         Name of file to which object is to be serialized.
-     * @param <T>
-     *         类的类型
+     * @param objectToSerialize Object that is to be serialized to file; it is best that this
+     *                          object have an individually overridden toString()
+     *                          implementation as that is used by this method for writing our
+     *                          status.
+     * @param fileName          *         Name of file to which object is to be serialized.
+     * @param <T>               类的类型
      */
     public static <T> void serialize(final T objectToSerialize, final String fileName) {
         if (fileName == null) {
@@ -41,11 +38,8 @@ public class SerializationDemonstrator {
      * Provides an object deserialized from the file indicated by the provided
      * file name.
      *
-     * @param fileToDeserialize
-     *         ame of file from which object is to be deserialized.
-     * @param <T>
-     *         类的类型
-     *
+     * @param fileToDeserialize ame of file from which object is to be deserialized.
+     * @param <T>               类的类型
      * @return 对象
      */
     public static <T> T deserialize(final String fileToDeserialize) {

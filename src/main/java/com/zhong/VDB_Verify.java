@@ -17,13 +17,13 @@ public class VDB_Verify {
     /**
      * 双线性对
      */
-    final  public static Pairing pairing = PairingFactory.getPairing("params/curves/a.properties");
+    final public static Pairing pairing = PairingFactory.getPairing("params/curves/a.properties");
     static Element g;
     static Element Y;
     static ArrayList<Element> h;
     static ArrayList<Element> C_down;
 
-    public VDB_Verify(){
+    public VDB_Verify() {
         // 获得项目的文件夹resources下面的a.txt
         String rootDir = System.getProperty("user.dir").replace("\\", "/");
         File outputDir = new File(rootDir, "output");
@@ -80,13 +80,13 @@ public class VDB_Verify {
             return false;
         }
 
-         Element left2_temp = h.get(x).duplicate().powZn(v_x.duplicate());
-         Element left2_temp_2 = H_T.duplicate().mul(left2_temp.duplicate());
-         Element left2_left = C_down.get(T).duplicate().div(left2_temp_2.duplicate());
-         Element left2 = pairing.pairing(left2_left.duplicate(), h.get(x).duplicate());
+        Element left2_temp = h.get(x).duplicate().powZn(v_x.duplicate());
+        Element left2_temp_2 = H_T.duplicate().mul(left2_temp.duplicate());
+        Element left2_left = C_down.get(T).duplicate().div(left2_temp_2.duplicate());
+        Element left2 = pairing.pairing(left2_left.duplicate(), h.get(x).duplicate());
 
-         Element right2 = pairing.pairing(pi_x.duplicate(), g.duplicate());
+        Element right2 = pairing.pairing(pi_x.duplicate(), g.duplicate());
 
-         return left2.isEqual(right2);
+        return left2.isEqual(right2);
     }
 }

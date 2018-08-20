@@ -11,12 +11,12 @@ public class VDB_Setup {
             long begin = System.currentTimeMillis();
             Setup(q, numHijRow);
             long end = System.currentTimeMillis();
-            System.out.println("q= "+q+" 时候setup花费的时间为： " +(end - begin)+" ms");
+            System.out.println("q= " + q + " 时候setup花费的时间为： " + (end - begin) + " ms");
         } else {
             long begin = System.currentTimeMillis();
             Setup(6549, 2);
             long end = System.currentTimeMillis();
-            System.out.println("q= "+6549+" 时候setup花费的时间为： " +(end - begin)+" ms");
+            System.out.println("q= " + 6549 + " 时候setup花费的时间为： " + (end - begin) + " ms");
         }
     }
 

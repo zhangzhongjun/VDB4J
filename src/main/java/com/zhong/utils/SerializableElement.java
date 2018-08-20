@@ -52,11 +52,8 @@ public class SerializableElement implements Serializable {
     /**
      * Serialize this instance.
      *
-     * @param out
-     *         Target to which this instance is written.
-     *
-     * @throws IOException
-     *         Thrown if exception occurs during serialization.
+     * @param out Target to which this instance is written.
+     * @throws IOException Thrown if exception occurs during serialization.
      */
     private void writeObject(final ObjectOutputStream out) throws IOException {
         out.write(this.element.toBytes());
@@ -65,13 +62,9 @@ public class SerializableElement implements Serializable {
     /**
      * Deserialize this instance from input stream.
      *
-     * @param in
-     *         Input Stream from which this instance is to be deserialized.
-     *
-     * @throws IOException
-     *         Thrown if error occurs in deserialization.
-     * @throws ClassNotFoundException
-     *         Thrown if expected class is not found.
+     * @param in Input Stream from which this instance is to be deserialized.
+     * @throws IOException            Thrown if error occurs in deserialization.
+     * @throws ClassNotFoundException Thrown if expected class is not found.
      */
     private void readObject(final ObjectInputStream in) throws IOException, ClassNotFoundException {
         /**

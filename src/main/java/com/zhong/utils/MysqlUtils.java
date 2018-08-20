@@ -31,12 +31,9 @@ public class MysqlUtils {
     /**
      * 向数据库中的表TSets中插入数据
      *
-     * @param i
-     *         在第几行
-     * @param j
-     *         在第几列
-     * @param Hij
-     *         要插入的数据
+     * @param i   在第几行
+     * @param j   在第几列
+     * @param Hij 要插入的数据
      */
     public static void saveHij(int q, int i, int j, SerializableElement Hij) {
         String sql = "insert into SetupOutput_H_" + (q) + "(i,j,H_ij) values(?,?,?)";
@@ -60,7 +57,7 @@ public class MysqlUtils {
      *
      * @return 得到第i行的H
      */
-    public static ArrayList<Element> getHi( int i,int q) {
+    public static ArrayList<Element> getHi(int i, int q) {
         ArrayList<Element> Hi = null;
 
         String sql = "select i,j,H_ij from SetupOutput_H_" + (q) + " WHERE i=(?) order by j";

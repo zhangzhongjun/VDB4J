@@ -9,9 +9,7 @@ public class MyUtils {
     /**
      * 将对象转化为byte数组
      *
-     * @param o
-     *         待转化的对象
-     *
+     * @param o 待转化的对象
      * @return byte[]数组
      */
     public static byte[] object2Bytes(Object o) {
@@ -36,9 +34,7 @@ public class MyUtils {
     /**
      * 将byte[]数组转化为对象
      *
-     * @param bytes
-     *         待转化的数组
-     *
+     * @param bytes 待转化的数组
      * @return 转化为的对象
      */
     public static Object byte2Object(byte[] bytes) {

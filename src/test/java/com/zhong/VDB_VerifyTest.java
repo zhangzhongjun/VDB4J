@@ -9,9 +9,9 @@ public class VDB_VerifyTest {
 
 
     @Test
-    public void computerVerifyTime_6549(){
+    public void computerVerifyTime_6549() {
         // 下面这两句话是先得到一个查询结果
-        VDB_Query  vdb_query = new VDB_Query();
+        VDB_Query vdb_query = new VDB_Query();
         Proof res = vdb_query.Query(0, 6549);
 
         //下面这句话有IO时间
@@ -25,8 +25,8 @@ public class VDB_VerifyTest {
     }
 
     @Test
-    public void computerVerifyTime_500(){
-        VDB_Query  vdb_query = new VDB_Query();
+    public void computerVerifyTime_500() {
+        VDB_Query vdb_query = new VDB_Query();
         Proof res = vdb_query.Query(0, 500);
         //新建VDB_Verify将花费大量IO时间
         VDB_Verify vdb_verify = new VDB_Verify();

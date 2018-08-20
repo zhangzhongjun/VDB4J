@@ -27,7 +27,7 @@ public class VC_Open {
     static ArrayList<Element> C_up;
     static int T;
 
-    public VC_Open(){
+    public VC_Open() {
         String rootDir = System.getProperty("user.dir").replace("\\", "/");
         outputDir = new File(rootDir, "output");
 
@@ -63,7 +63,7 @@ public class VC_Open {
     }
 
     public Proof Open(int x, int q) {
-        Hx = MysqlUtils.getHi( x,q);
+        Hx = MysqlUtils.getHi(x, q);
 
         Element pi_x = pairing.getG1().newOneElement();
 

@@ -17,7 +17,7 @@ public class VDB_Update {
     /**
      * 双线性对
      */
-    final  public static Pairing pairing = PairingFactory.getPairing("params/curves/a.properties");
+    final public static Pairing pairing = PairingFactory.getPairing("params/curves/a.properties");
     static File outputDir;
     static int T;
     static Element H_T;
@@ -27,7 +27,7 @@ public class VDB_Update {
     static ArrayList<Element> v;
     static Element y;
 
-    public VDB_Update(){
+    public VDB_Update() {
         String rootDir = System.getProperty("user.dir").replace("\\", "/");
         outputDir = new File(rootDir, "output");
 
@@ -91,12 +91,10 @@ public class VDB_Update {
     /**
      * 更新操作
      *
-     * @param x
-     *         要更新的元素的索引
-     * @param v_x_new
-     *         要更新的元素
+     * @param x       要更新的元素的索引
+     * @param v_x_new 要更新的元素
      */
-    public  void Update(int x, Element v_x_new) {
+    public void Update(int x, Element v_x_new) {
         T = T + 1;
         Element C_up_T = (c_down.get(T - 1).duplicate().div(H_T.duplicate())).mul(h.get(x).duplicate().powZn(v_x_new.duplicate().sub(v.get(x).duplicate())));
         c_up.add(C_up_T);
@@ -110,9 +108,8 @@ public class VDB_Update {
 
     /**
      * 序列化输出
-     *
+     * <p>
      * T H_T c_down c_up v
-     *
      */
     public void serializeOutput() {
         File outputFile = new File(outputDir, "T");
@@ -149,7 +146,7 @@ public class VDB_Update {
     /**
      * 为了测试时间写的函数
      *
-     * @param x 要更新的位置
+     * @param x       要更新的位置
      * @param v_x_new 要更新的元素
      */
     public void Update_time(int x, Element v_x_new) {

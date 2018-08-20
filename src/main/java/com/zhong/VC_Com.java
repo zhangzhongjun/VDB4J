@@ -54,8 +54,7 @@ public class VC_Com {
     /**
      * 生成v c_up c_down C_R
      *
-     * @param q
-     *         vdb中的q，代表关键词的个数
+     * @param q vdb中的q，代表关键词的个数
      */
     public static void Com(int q) {
         v = new ArrayList<>();

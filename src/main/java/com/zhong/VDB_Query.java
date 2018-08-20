@@ -31,13 +31,13 @@ public class VDB_Query {
     /**
      * 测试query的时间
      *
-     * @param x 查询第x个位置的元素
-     * @param q 有多少个位置
+     * @param x       查询第x个位置的元素
+     * @param q       有多少个位置
      * @param vc_open 一个初始化好了的VC_Open对象，这是为了只读取io一次
      * @return 证据
      */
-    public Proof Query_Time(int x,int q,VC_Open vc_open){
-        return vc_open.Open(x,q);
+    public Proof Query_Time(int x, int q, VC_Open vc_open) {
+        return vc_open.Open(x, q);
     }
 }
 

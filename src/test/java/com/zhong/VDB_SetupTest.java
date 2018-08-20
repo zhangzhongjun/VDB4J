@@ -9,7 +9,7 @@ import static com.zhong.VDB_Setup.Setup;
  **/
 public class VDB_SetupTest {
     @Test
-    public void computerSetupTime_500(){
+    public void computerSetupTime_500() {
         int q = 500;
         int numHijRow = 2;
         Setup(q, numHijRow);
@@ -17,7 +17,7 @@ public class VDB_SetupTest {
 
 
     @Test
-    public void computerSetupTime_6549(){
+    public void computerSetupTime_6549() {
         int q = 500;
         int numHijRow = 2;
         Setup(q, numHijRow);

@@ -57,8 +57,7 @@ public class VC_KeyGen {
     /**
      * 生成z h y Y
      *
-     * @param q
-     *         vdb中的q，是指关键词的个数
+     * @param q vdb中的q，是指关键词的个数
      */
     public static void KeyGen(int q) {
         T = 0;
@@ -79,10 +78,8 @@ public class VC_KeyGen {
     /**
      * 生成h H
      *
-     * @param hangShu
-     *         要生成几行
-     * @param q
-     *         vdb中的q，是指关键词的个数
+     * @param hangShu 要生成几行
+     * @param q       vdb中的q，是指关键词的个数
      */
     public static void KeyGen2(int hangShu, int q) {
         for (int i = 0; i < hangShu; i++) {
